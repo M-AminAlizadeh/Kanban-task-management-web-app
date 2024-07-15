@@ -1,8 +1,9 @@
-import logoLight from '../assets/icons/logo-light.svg';
+// import logoLight from '../assets/icons/logo-light.svg';
 import logoDark from '../assets/icons/logo-dark.svg';
 import iconBoard from '../assets/icons/icon-board.svg'
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ data }) => {
   return (
   <nav className="border-2 border-sky-500 w-1/5 ">
     <header className="p-8">
@@ -14,16 +15,24 @@ const Navbar = () => {
 
       <div className="border-2 border-red-900">
         <ul>
-          <li className="flex items-center py-3.5 pl-8 rounded-r-full hover:bg-primary-color hover:text-light-color-1 cursor-pointer">
-            <img className="light-color-1" src={iconBoard} alt="board-icon" />
-            <span className="dark-color-5 ml-4">Platform Launch</span>
-          </li>
+          {data.boards.map((board)=>{
+            return(
+              <li key={board.name}  className="flex items-center py-3.5 pl-8 rounded-r-full hover:bg-primary-color hover:text-light-color-1 cursor-pointer">
+                <img className="light-color-1" src={iconBoard} alt="board-icon" />
+                <span className="dark-color-5 ml-4">{board.name}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
       
     </section>
   </nav>
   )
+}
+
+Navbar.propTypes = {
+  data: PropTypes.object.isRequired,
 }
 
 export default Navbar;
