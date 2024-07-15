@@ -18,7 +18,6 @@ export default {
         'light-color-1': 'hsl(0, 0, 100)',
         'light-color-2': 'hsl(220, 69, 97)',
         'light-color-3': 'hsl(221, 69, 94)',
-
       }
     },
   },
