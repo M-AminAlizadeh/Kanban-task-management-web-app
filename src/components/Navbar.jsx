@@ -7,13 +7,13 @@ const Navbar = ({ data }) => {
   return (
   <nav className="border-2 border-sky-500 w-1/5 ">
     <header className="p-8">
-      <img src={logoDark} alt="logo-light-theme" />
+      <img className="cursor-pointer" src={logoDark} alt="logo-light-theme" />
     </header>
     {/* Boards */}
     <section className=" w-11/12">
-      <h5 className="border-4 border-black py-5 uppercase text-dark-color-5 text-xs pl-8 tracking-widest">All Boards (3)</h5>
+      <h5 className="py-5 uppercase text-dark-color-5 text-xs pl-8 tracking-widest">All Boards (3)</h5>
 
-      <div className="border-2 border-red-900">
+      <div>
         <ul>
           {data.boards.map((board)=>{
             return(
